@@ -47,6 +47,8 @@
     }
 
     self.currentRequest = self.playlist.objects[0];
+    self.trackNameLabel.text = @"Loading...";
+
     PFQuery *songQuery = [PFQuery queryWithClassName:@"Song"];
     [songQuery whereKey:@"name" containsString:self.currentRequest[@"name"]];
     
@@ -61,6 +63,7 @@
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 [self playFileWithData:data];
+                self.trackNameLabel.text = [object objectForKey:@"name"];
             }
         }];
     }];
