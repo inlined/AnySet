@@ -1,8 +1,6 @@
 #import <Parse/Parse.h>
 #import "ParseStarterProjectAppDelegate.h"
 
-#import "CocoaLibSpotify.h"
-
 @implementation ParseStarterProjectAppDelegate
 
 
