@@ -292,7 +292,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnySet/AnySet-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "AnySet copy-Info.plist";
+				INFOPLIST_FILE = "AnySet/AnySet-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "AnySet-iPad";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -313,7 +313,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnySet/AnySet-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "AnySet copy-Info.plist";
+				INFOPLIST_FILE = "AnySet/AnySet-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "AnySet-iPad";
 				TARGETED_DEVICE_FAMILY = 2;
