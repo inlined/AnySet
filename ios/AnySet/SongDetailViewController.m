@@ -28,6 +28,7 @@
     [super viewDidLoad];
     NSLog(@"Loaded detail");
     
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playNextSong) name:@"noLongerEmpty" object:self.playlist];
     [self playNextSong];
 }
 
@@ -39,7 +40,8 @@
     }
     
     if (!self.playlist.objects.count) {
-        [self.playlist loadObjects];
+        //        [self.playlist loadObjects];
+
         dispatch_after(500, dispatch_get_main_queue(), ^{ [self playNextSong]; });
         return;
     }
