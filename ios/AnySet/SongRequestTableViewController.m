@@ -98,6 +98,11 @@
         cell.detailTextLabel.text = @"Anon";
     }
     
+    if (indexPath.row == 0) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
     return cell;
 }
 
@@ -126,6 +131,26 @@
  return cell;
  }
  */
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    UIActionSheet *popupSheet = [[UIActionSheet alloc] init];
+    popupSheet.tag = indexPath.row;
+    popupSheet.delegate = self;
+    [popupSheet addButtonWithTitle:@"Bump!"];
+    popupSheet.destructiveButtonIndex = [popupSheet addButtonWithTitle:@"Remove"];
+    popupSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIView *accessoryView = nil;
+    for (UIView *subview in cell.subviews) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            accessoryView = subview;
+            break;
+        }
+    }
+    
+    [popupSheet showFromRect:accessoryView.bounds inView:accessoryView animated:YES];
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -166,6 +191,35 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    PFObject *request = [self.objects objectAtIndex:actionSheet.tag];
+    if (actionSheet.destructiveButtonIndex == buttonIndex) {
+        // Remove from Queue
+        [request deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [self loadObjects];
+            }
+        }];
+    } else {
+        // Bump
+        if (self.objects.count > 1) {
+            PFObject *currentRequest = [self.objects objectAtIndex:0];
+            PFObject *nextRequest = [self.objects objectAtIndex:1];
+            NSNumber *topKarma = [nextRequest objectForKey:@"karma"];
+            NSNumber *newKarma = [NSNumber numberWithInt:topKarma.intValue + 1];
+            [request setObject:newKarma forKey:@"karma"];
+            [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [currentRequest deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    [self loadObjects];
+                }];
+            }];
+        }
+    }
 }
 
 @end

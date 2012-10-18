@@ -6,6 +6,6 @@
 //
 //
 
-@interface SongRequestTableViewController : PFQueryTableViewController
+@interface SongRequestTableViewController : PFQueryTableViewController <UIActionSheetDelegate>
 
 @end
