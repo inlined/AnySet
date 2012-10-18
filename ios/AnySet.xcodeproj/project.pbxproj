@@ -66,7 +66,7 @@
 		E9A465BA162FC19C00644E7B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A465B9162FC19C00644E7B /* libstdc++.dylib */; };
 		E9A465BC162FC1A300644E7B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A465BB162FC1A300644E7B /* CoreAudio.framework */; };
 		E9A465BE162FC1B000644E7B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A465BD162FC1B000644E7B /* AVFoundation.framework */; };
-		E9A465C0162FC30A00644E7B /* libspotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A465BF162FC30A00644E7B /* libspotify.framework */; };
+		E9A465C7162FC7D100644E7B /* libspotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A465C6162FC7D100644E7B /* libspotify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,7 +172,7 @@
 		E9A465B9162FC19C00644E7B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		E9A465BB162FC1A300644E7B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		E9A465BD162FC1B000644E7B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E9A465BF162FC30A00644E7B /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = "../../../Downloads/libspotify-12.1.51-iOS-universal/libspotify.framework"; sourceTree = "<group>"; };
+		E9A465C6162FC7D100644E7B /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libspotify.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 				C428735B162FBAC800C65EE9 /* UIKit.framework in Frameworks */,
 				C428735C162FBAC800C65EE9 /* Foundation.framework in Frameworks */,
 				C428735D162FBAC800C65EE9 /* Parse.framework in Frameworks */,
-				E9A465C0162FC30A00644E7B /* libspotify.framework in Frameworks */,
+				E9A465C7162FC7D100644E7B /* libspotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +291,7 @@
 		E9A46552162FBF8500644E7B /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
-				E9A465BF162FC30A00644E7B /* libspotify.framework */,
+				E9A465C6162FC7D100644E7B /* libspotify.framework */,
 				E9A4656A162FC01A00644E7B /* AppledocSettings.plist */,
 				E9A4656B162FC01A00644E7B /* CocoaLibSpotify.h */,
 				E9A4656C162FC01A00644E7B /* CocoaLibSpotifyPlatformImports.h */,
@@ -428,7 +428,6 @@
 				C4287364162FBAC800C65EE9 /* Default@2x.png in Resources */,
 				C4287365162FBAC800C65EE9 /* Entitlements.plist in Resources */,
 				C428737A162FC16500C65EE9 /* MainWindow.xib in Resources */,
-				C4287375162FBB8D00C65EE9 /* MainStoryboard.storyboard in Resources */,
 				E9A465A0162FC01A00644E7B /* AppledocSettings.plist in Resources */,
 				E9A465B8162FC15900644E7B /* SPLoginResources.bundle in Resources */,
 			);
