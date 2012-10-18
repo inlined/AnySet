@@ -13,7 +13,7 @@ delegateTo = function(response) {
 };
 
 
-var upsert = function(klass, phone, func) {
+var upsert = function(klass, phone, defaults, func) {
   var query = new Parse.Query(klass);
   query.equalTo('phone', phone);
   query.first({
@@ -21,8 +21,18 @@ var upsert = function(klass, phone, func) {
       if (!object) {
         object = new klass();
         object.set('phone', phone);
+        if (defaults) {
+          Parse._.each(defaults, function(value, key) {
+            object.set(key, value);
+          });
+        }
+        object.save({
+          success: func,
+          error: function() { console.log('error'); }
+        });
+      } else {
+        func(object);
       }
-      func(object);
     },
     error: function(error) {
       var object = new klass();
@@ -55,47 +65,35 @@ Parse.Cloud.define("on_sms", function(request, response) {
   command = command.toLowerCase();
   switch (command) {
   case 'nick':
-    upsert(Listener, from, function(listener) {
-      if (listener.isNew()) {
-       listener.set('karma', 0);
-      }
+    upsert(Listener, from, {karma: 0}, function(listener) {
       listener.set('nick', args);
       listener.save(null, delegateTo(response));
     });
     break;
 
   case 'play':
-    upsert(Listener, from, function(listener) {
-      var addRequest = function() {
-        upsert(Set, to, function(set) {
-          var request = new Request();
-          request.set('listener', listener);
-          request.set('set', set);
-          request.set('song', args);
-          request.set('karma', listener.get('karma'));
-          request.save({
-            success: function() {
-              if (set.isNew()) {
-                set.set('currentSong', request);
-                set.save(delegateTo(response));
-              } else {
-                response.success();
-              }
-            },
-            error: defaultErr(response)
-          });
-        });
-      };
-
-      if (listener.isNew()) {
-        listener.set('karma', 0);
-        listener.save({
-          success: function() { addRequest(); },
+    upsert(Listener, from, {karma: 0}, function(listener) {
+      console.log("Upsert set");
+      upsert(Set, to, null, function(set) {
+        console.log("Create request");
+        var req = new Request();
+        req.set('listener', listener);
+        req.set('set', set);
+        req.set('song', args);
+        req.set('karma', listener.get('karma'));
+        req.save(/*{
+          success: function() {
+            console.log("Set current song");
+            if (!set.get('currentSong')) {
+              set.set('currentSong', req);
+              set.save(delegateTo(response));
+            } else {
+              resonse.success();
+            }
+          },
           error: defaultErr(response)
-        });
-      } else {
-        addRequest();
-      }
+        }*/ delegateTo(response));
+      });
     });
     break;
 
