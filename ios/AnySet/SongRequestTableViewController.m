@@ -4,6 +4,10 @@
 
 #import "SongRequestTableViewController.h"
 
+@interface SongRequestTableViewController()
+@property (nonatomic, assign) BOOL isEmpty;
+@end
+
 @implementation SongRequestTableViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -23,6 +27,8 @@
         
         // The number of objects to show per page
         self.objectsPerPage = 10;
+        
+        self.isEmpty = YES;
     }
     return self;
 }
@@ -48,6 +54,12 @@
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
+    
+    if (self.isEmpty && self.objects.count > 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"noLongerEmpty" object:nil];
+    }
+    
+    self.isEmpty = self.objects.count == 0;
     
     // This method is called every time objects are loaded from Parse via the PFQuery
 }
