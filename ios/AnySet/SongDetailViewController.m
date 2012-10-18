@@ -50,7 +50,7 @@
     self.trackNameLabel.text = @"Loading...";
 
     PFQuery *songQuery = [PFQuery queryWithClassName:@"Song"];
-    [songQuery whereKey:@"name" containsString:self.currentRequest[@"name"]];
+    [songQuery whereKey:@"name" containsString:self.currentRequest[@"song"]];
     
     [self.playlist loadObjects];
     
