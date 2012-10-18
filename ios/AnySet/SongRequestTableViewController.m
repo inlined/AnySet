@@ -61,6 +61,7 @@
     
     self.isEmpty = self.objects.count == 0;
     
+    dispatch_after(1000, dispatch_get_main_queue(), ^{ [self loadObjects]; });
     // This method is called every time objects are loaded from Parse via the PFQuery
 }
 
