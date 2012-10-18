@@ -33,6 +33,8 @@
 		C4287378162FBBFE00C65EE9 /* SongRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4287377162FBBFE00C65EE9 /* SongRequestTableViewController.m */; };
 		C428737A162FC16500C65EE9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4287379162FC16500C65EE9 /* MainWindow.xib */; };
 		C428737D162FC22300C65EE9 /* SongDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428737C162FC22300C65EE9 /* SongDetailViewController.m */; };
+		C4A1B350162FC6C20020FFBD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A1B34E162FC6C20020FFBD /* Icon.png */; };
+		C4A1B351162FC6C20020FFBD /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A1B34F162FC6C20020FFBD /* Icon@2x.png */; };
 		E9A46564162FBF9200644E7B /* SPClientUpsellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A46557162FBF9200644E7B /* SPClientUpsellViewController.m */; };
 		E9A46565162FBF9200644E7B /* SPFacebookPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A46559162FBF9200644E7B /* SPFacebookPermissionsViewController.m */; };
 		E9A46566162FBF9200644E7B /* SPLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A4655B162FBF9200644E7B /* SPLicenseViewController.m */; };
@@ -95,12 +97,14 @@
 		C428733F162FB9B300C65EE9 /* AnySet-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AnySet-Prefix.pch"; path = "AnySet/AnySet-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		C4287340162FB9B300C65EE9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AnySet/main.m; sourceTree = SOURCE_ROOT; };
 		C4287346162FB9CE00C65EE9 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = AnySet/Entitlements.plist; sourceTree = SOURCE_ROOT; };
-		C4287369162FBAC800C65EE9 /* AnySet-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnySet-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4287369162FBAC800C65EE9 /* AnySet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnySet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4287376162FBBFE00C65EE9 /* SongRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongRequestTableViewController.h; path = AnySet/SongRequestTableViewController.h; sourceTree = SOURCE_ROOT; };
 		C4287377162FBBFE00C65EE9 /* SongRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongRequestTableViewController.m; path = AnySet/SongRequestTableViewController.m; sourceTree = SOURCE_ROOT; };
 		C4287379162FC16500C65EE9 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = AnySet/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		C428737B162FC22300C65EE9 /* SongDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongDetailViewController.h; path = AnySet/SongDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		C428737C162FC22300C65EE9 /* SongDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongDetailViewController.m; path = AnySet/SongDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		C4A1B34E162FC6C20020FFBD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Resources-iPad/Icon.png"; sourceTree = "<group>"; };
+		C4A1B34F162FC6C20020FFBD /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources-iPad/Icon@2x.png"; sourceTree = "<group>"; };
 		E9A46556162FBF9200644E7B /* SPClientUpsellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPClientUpsellViewController.h; sourceTree = "<group>"; };
 		E9A46557162FBF9200644E7B /* SPClientUpsellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPClientUpsellViewController.m; sourceTree = "<group>"; };
 		E9A46558162FBF9200644E7B /* SPFacebookPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookPermissionsViewController.h; sourceTree = "<group>"; };
@@ -223,7 +227,7 @@
 		09ABC06E13A1D52D009C3FCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4287369162FBAC800C65EE9 /* AnySet-iPad.app */,
+				C4287369162FBAC800C65EE9 /* AnySet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -284,6 +288,8 @@
 		C428736B162FBAC800C65EE9 /* Resources-iPad */ = {
 			isa = PBXGroup;
 			children = (
+				C4A1B34E162FC6C20020FFBD /* Icon.png */,
+				C4A1B34F162FC6C20020FFBD /* Icon@2x.png */,
 			);
 			name = "Resources-iPad";
 			sourceTree = "<group>";
@@ -389,7 +395,7 @@
 			);
 			name = "AnySet-iPad";
 			productName = ParseStarterProject;
-			productReference = C4287369162FBAC800C65EE9 /* AnySet-iPad.app */;
+			productReference = C4287369162FBAC800C65EE9 /* AnySet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -428,9 +434,10 @@
 				C4287364162FBAC800C65EE9 /* Default@2x.png in Resources */,
 				C4287365162FBAC800C65EE9 /* Entitlements.plist in Resources */,
 				C428737A162FC16500C65EE9 /* MainWindow.xib in Resources */,
-				C4287375162FBB8D00C65EE9 /* MainStoryboard.storyboard in Resources */,
 				E9A465A0162FC01A00644E7B /* AppledocSettings.plist in Resources */,
 				E9A465B8162FC15900644E7B /* SPLoginResources.bundle in Resources */,
+				C4A1B350162FC6C20020FFBD /* Icon.png in Resources */,
+				C4A1B351162FC6C20020FFBD /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +541,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "AnySet-iPad";
+				PRODUCT_NAME = AnySet;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -560,7 +567,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "AnySet-iPad";
+				PRODUCT_NAME = AnySet;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
