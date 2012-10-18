@@ -65,7 +65,7 @@
 #pragma mark - AVAudioPlayerDelegate
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-  // play next song
+//    [self playNextSong];
 }
 
 #pragma mark - ()
