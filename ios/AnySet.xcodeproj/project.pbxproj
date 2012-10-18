@@ -206,9 +206,6 @@
 		09ABC06213A1D52D009C3FCF = {
 			isa = PBXGroup;
 			children = (
-				E9A465BD162FC1B000644E7B /* AVFoundation.framework */,
-				E9A465BB162FC1A300644E7B /* CoreAudio.framework */,
-				E9A465B9162FC19C00644E7B /* libstdc++.dylib */,
 				E9A46552162FBF8500644E7B /* Spotify */,
 				C428736B162FBAC800C65EE9 /* Resources-iPad */,
 				09ABC07713A1D52D009C3FCF /* AnySet */,
@@ -228,6 +225,9 @@
 		09ABC07013A1D52D009C3FCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9A465BD162FC1B000644E7B /* AVFoundation.framework */,
+				E9A465BB162FC1A300644E7B /* CoreAudio.framework */,
+				E9A465B9162FC19C00644E7B /* libstdc++.dylib */,
 				6372FF571613CC47002132AF /* AdSupport.framework */,
 				6372FF551613CC42002132AF /* Social.framework */,
 				6372FF521613CC3C002132AF /* Accounts.framework */,
