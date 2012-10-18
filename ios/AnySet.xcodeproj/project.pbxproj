@@ -30,8 +30,9 @@
 		C4287363162FBAC800C65EE9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C428733D162FB9B300C65EE9 /* Default.png */; };
 		C4287364162FBAC800C65EE9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C428733E162FB9B300C65EE9 /* Default@2x.png */; };
 		C4287365162FBAC800C65EE9 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4287346162FB9CE00C65EE9 /* Entitlements.plist */; };
-		C4287375162FBB8D00C65EE9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4287373162FBB2C00C65EE9 /* MainStoryboard.storyboard */; };
 		C4287378162FBBFE00C65EE9 /* SongRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4287377162FBBFE00C65EE9 /* SongRequestTableViewController.m */; };
+		C428737A162FC16500C65EE9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4287379162FC16500C65EE9 /* MainWindow.xib */; };
+		C428737D162FC22300C65EE9 /* SongDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428737C162FC22300C65EE9 /* SongDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +62,11 @@
 		C4287340162FB9B300C65EE9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AnySet/main.m; sourceTree = SOURCE_ROOT; };
 		C4287346162FB9CE00C65EE9 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = AnySet/Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		C4287369162FBAC800C65EE9 /* AnySet-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnySet-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4287373162FBB2C00C65EE9 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = AnySet/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		C4287376162FBBFE00C65EE9 /* SongRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongRequestTableViewController.h; path = AnySet/SongRequestTableViewController.h; sourceTree = SOURCE_ROOT; };
 		C4287377162FBBFE00C65EE9 /* SongRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongRequestTableViewController.m; path = AnySet/SongRequestTableViewController.m; sourceTree = SOURCE_ROOT; };
+		C4287379162FC16500C65EE9 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = AnySet/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		C428737B162FC22300C65EE9 /* SongDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongDetailViewController.h; path = AnySet/SongDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		C428737C162FC22300C65EE9 /* SongDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongDetailViewController.m; path = AnySet/SongDetailViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +142,11 @@
 			children = (
 				C428732F162FB99400C65EE9 /* ParseStarterProjectAppDelegate.h */,
 				C4287330162FB99400C65EE9 /* ParseStarterProjectAppDelegate.m */,
-				C4287373162FBB2C00C65EE9 /* MainStoryboard.storyboard */,
+				C4287379162FC16500C65EE9 /* MainWindow.xib */,
 				C4287376162FBBFE00C65EE9 /* SongRequestTableViewController.h */,
 				C4287377162FBBFE00C65EE9 /* SongRequestTableViewController.m */,
+				C428737B162FC22300C65EE9 /* SongDetailViewController.h */,
+				C428737C162FC22300C65EE9 /* SongDetailViewController.m */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
 			name = AnySet;
@@ -224,7 +229,7 @@
 				C4287363162FBAC800C65EE9 /* Default.png in Resources */,
 				C4287364162FBAC800C65EE9 /* Default@2x.png in Resources */,
 				C4287365162FBAC800C65EE9 /* Entitlements.plist in Resources */,
-				C4287375162FBB8D00C65EE9 /* MainStoryboard.storyboard in Resources */,
+				C428737A162FC16500C65EE9 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +243,7 @@
 				C428734A162FBAC800C65EE9 /* ParseStarterProjectAppDelegate.m in Sources */,
 				C428734C162FBAC800C65EE9 /* main.m in Sources */,
 				C4287378162FBBFE00C65EE9 /* SongRequestTableViewController.m in Sources */,
+				C428737D162FC22300C65EE9 /* SongDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
