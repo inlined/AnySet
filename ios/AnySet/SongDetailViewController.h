@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SongDetailViewController : UIViewController
-
+@interface SongDetailViewController : UIViewController <AVAudioPlayerDelegate>
+@property (nonatomic, strong) IBOutlet UILabel *trackNameLabel;
 @end

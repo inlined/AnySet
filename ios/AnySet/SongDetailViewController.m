@@ -62,21 +62,32 @@
 }
 
 
+#pragma mark - AVAudioPlayerDelegate
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+  // play next song
+}
+
+#pragma mark - ()
+
 - (void)playFileAtURL:(NSURL *)url {	
     NSError *error;
 	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-	self.audioPlayer.numberOfLoops = -1;
+    self.audioPlayer.delegate = self;
+	self.audioPlayer.numberOfLoops = 1;
 	
 	if (self.audioPlayer == nil)
 		NSLog(@"%@", [error description]);
 	else
 		[self.audioPlayer play];
+    
 }
 
 - (void)playFileWithData:(NSData *)data {
     NSError *error;
 	self.audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&error];
-	self.audioPlayer.numberOfLoops = -1;
+    self.audioPlayer.delegate = self;
+	self.audioPlayer.numberOfLoops = 1;
 	
 	if (self.audioPlayer == nil)
 		NSLog(@"%@", [error description]);
