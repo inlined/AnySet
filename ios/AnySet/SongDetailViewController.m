@@ -28,33 +28,41 @@
     [super viewDidLoad];
     NSLog(@"Loaded detail");
     
-    PFQuery *songQuery = [PFQuery queryWithClassName:@"Song"];
-    [songQuery whereKey:@"name" hasPrefix:@"ghost"];
-    [songQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (object) {
-            PFFile *file = [object objectForKey:@"data"];
-            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    [self playFileWithData:data];
-                }
-            } progressBlock:^(int percentDone) {
-            }];
-        }
-    }];
-    
-	// Do any additional setup after loading the view.
-    /*
-    NSData *appKeyData = [NSData dataWithBytesNoCopy:g_appkey
-                                              length:g_appkey_size
-                                        freeWhenDone:NO];
-    SPSession *session =
-        [SPSession initializeSharedSessionWithApplicationKey:appKeyData
-                                                   userAgent:
-                                               loadingPolicy:<#(SPAsyncLoadingPolicy)#> error:<#(NSError *__autoreleasing *)#>]
-    [SPLoginViewController loginControllerForSession:session];
-     */
+    [self playNextSong];
 }
 
+- (void)playNextSong {
+    if (self.currentRequest) {
+        self.currentRequest[@"done"] = @YES;
+        [self.currentRequest saveEventually];
+        self.currentRequest = nil;
+    }
+    
+    if (!self.playlist.objects.count) {
+        [self.playlist loadObjects];
+        dispatch_after(500, dispatch_get_main_queue(), ^{ [self playNextSong]; });
+        return;
+    }
+
+    self.currentRequest = self.playlist.objects[0];
+    PFQuery *songQuery = [PFQuery queryWithClassName:@"Song"];
+    [songQuery whereKey:@"name" containsString:self.currentRequest[@"name"]];
+    
+    [self.playlist loadObjects];
+    
+    [songQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            dispatch_async(dispatch_get_main_queue(), ^{ [self playNextSong]; });
+            return;
+        }
+        PFFile *file = [object objectForKey:@"data"];
+        [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                [self playFileWithData:data];
+            }
+        }];
+    }];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

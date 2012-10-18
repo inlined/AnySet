@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C4287348162FBAC800C65EE9"
-               BuildableName = "AnySet-iPad.app"
+               BuildableName = "AnySet.app"
                BlueprintName = "AnySet-iPad"
                ReferencedContainer = "container:AnySet.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4287348162FBAC800C65EE9"
-            BuildableName = "AnySet-iPad.app"
+            BuildableName = "AnySet.app"
             BlueprintName = "AnySet-iPad"
             ReferencedContainer = "container:AnySet.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4287348162FBAC800C65EE9"
-            BuildableName = "AnySet-iPad.app"
+            BuildableName = "AnySet.app"
             BlueprintName = "AnySet-iPad"
             ReferencedContainer = "container:AnySet.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4287348162FBAC800C65EE9"
-            BuildableName = "AnySet-iPad.app"
+            BuildableName = "AnySet.app"
             BlueprintName = "AnySet-iPad"
             ReferencedContainer = "container:AnySet.xcodeproj">
          </BuildableReference>

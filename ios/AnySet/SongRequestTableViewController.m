@@ -57,6 +57,7 @@
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.className];
     [query includeKey:@"listener"];
+    [query whereKey:@"played" notEqualTo:@YES];
     
     [query orderByDescending:@"karma"];
     [query addAscendingOrder:@"createdAt"];
