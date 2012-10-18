@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "AnySet": {
+            "applicationId": "iUaNebmPN44BV5i9ExS5TEajQI5AV6pSWCUFXgZy", 
+            "masterKey": "yEpUNyjb7tiu1yfLmnFSBXlaMZo909ZSPTPgtRdI"
+        }, 
+        "_default": {
+            "link": "AnySet"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.1.6"
+    }
+}
