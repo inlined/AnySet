@@ -12,7 +12,10 @@
     [Parse setApplicationId:@"iUaNebmPN44BV5i9ExS5TEajQI5AV6pSWCUFXgZy" clientKey:@"133MO9iLnmG5knAALW9tpObAeRQ0VsYSQyPEgV6f"];
 
     // Override point for customization after application launch.
-     
+
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
                                                     UIRemoteNotificationTypeAlert|
                                                     UIRemoteNotificationTypeSound];
